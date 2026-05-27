@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Startup Success Predictor</title>
+</head>
+<body>
+
+<h1>Startup Success Predictor</h1>
+
+<form action="/predict" method="post">
+
+    <input type="text" name="permalink" placeholder="Permalink"><br><br>
+
+    <input type="text" name="name" placeholder="Name"><br><br>
+
+    <input type="text" name="homepage_url" placeholder="Homepage URL"><br><br>
+
+    <input type="text" name="category_list" placeholder="Category List"><br><br>
+
+    <input type="text" name="funding_total_usd" placeholder="Funding Total USD"><br><br>
+
+    <input type="text" name="country_code" placeholder="Country Code"><br><br>
+
+    <input type="text" name="state_code" placeholder="State Code"><br><br>
+
+    <input type="text" name="region" placeholder="Region"><br><br>
+
+    <input type="text" name="city" placeholder="City"><br><br>
+
+    <input type="text" name="funding_rounds" placeholder="Funding Rounds"><br><br>
+
+    <input type="text" name="founded_at" placeholder="Founded At"><br><br>
+
+    <input type="text" name="first_funding_at" placeholder="First Funding At"><br><br>
+
+    <input type="text" name="last_funding_at" placeholder="Last Funding At"><br><br>
+
+    <button type="submit">Predict</button>
+
+</form>
+
+{% if prediction %}
+
+<h2>Prediction: {{ prediction }}</h2>
+
+<h3>Probability of Success: {{ probability }}%</h3>
+
+{% endif %}
+
+</body>
+</html>

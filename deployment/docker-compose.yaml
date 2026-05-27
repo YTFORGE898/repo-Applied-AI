@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+
+  startup-api:
+
+    build: .
+
+    ports:
+      - "8000:8000"
