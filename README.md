@@ -84,7 +84,8 @@ Predicts whether a startup is likely to succeed. For most users this will be the
     "funding_total_usd": float,
     "funding_rounds": int,
     "founded_at": datetime,
-    "first_funding_at": datetime,"last_funding_at": datetime
+    "first_funding_at": datetime,
+    "last_funding_at": datetime
 }
 ```
 
@@ -116,12 +117,17 @@ last_funded_at is the date on which the startup last received funding.
 
 ```json
 {
-    "prediction": 0 or 1,
-    "predicted_label": "failure" or "success",
+    "prediction": int,
+    "predicted_label": string,
     "success_probability": float,
     "failure_probability": float
 }
 ```
+
+prediction returns 0 for a failure and 1 for a success.
+predicted_label returns "failure" or "success" and is what is displayed to the user.
+success_probability returns a value from 0 to 1 representing the probability that the startup will be successful.
+failure_probability returns a value from 0 to 1 representing the probability that the startup will fail.
 
 # GET /
 
