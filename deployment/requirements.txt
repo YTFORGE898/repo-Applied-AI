@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+pydantic
+catboost
+pandas
+numpy
+streamlit
+requests
+python-multipart
