@@ -47,6 +47,8 @@ This command will make sure that the API is deactivated. Run this for safety aft
 docker compose down
 ```
 
+Docker automatically installs the dependencies listed in requirements.txt, so there is no need to install them yourself.
+
 # Accessing the API
 
 After activating the API as described in the previous section, these URLs will lead to the webpages that allow for usage of the API.
