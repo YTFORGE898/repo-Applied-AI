@@ -1,0 +1,27 @@
+{
+    "reference_date": "2016-12-31",
+    "feature_order": [
+        "funding_total_usd",
+        "country_code",
+        "state_code",
+        "region",
+        "city",
+        "funding_rounds",
+        "funding_missing",
+        "funding_total_usd_log",
+        "founded_at_missing",
+        "first_funding_at_missing",
+        "last_funding_at_missing",
+        "startup_age_days",
+        "time_to_first_funding_days",
+        "funding_duration_days",
+        "main_category",
+        "category_count",
+        "founded_at_year",
+        "founded_at_month",
+        "first_funding_at_year",
+        "first_funding_at_month",
+        "last_funding_at_year",
+        "last_funding_at_month"
+    ]
+}
