@@ -10,6 +10,9 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import confusion_matrix
 
+# Initial version of the CatBoost model. The final version is in the final_files folder.
+# This version is used for deployment.
+
 # run preprocessing file first
 
 df = pd.read_csv("startup_preprocessed.csv")

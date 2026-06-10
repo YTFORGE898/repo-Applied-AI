@@ -1,0 +1,8 @@
+pandas
+numpy
+matplotlib
+plotly
+catboost
+scikit-learn
+optuna
+joblib

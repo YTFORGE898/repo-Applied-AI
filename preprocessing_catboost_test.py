@@ -1,6 +1,9 @@
 import pandas as pd
 import numpy as np
 
+# Initial version of the preprocessing. The final version is in the final_files folder.
+# This version is used for deployment.
+
 df = pd.read_csv("big_startup_secsees_dataset.csv")
 
 success_labels = ["acquired", "ipo"]
