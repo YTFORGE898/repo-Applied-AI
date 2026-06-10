@@ -25,7 +25,7 @@ st.write(
 )
 
 with st.form("startup_form"):
-    main_category = st.text_input("Main category", value="Software")
+    category_list = st.text_input("Category list", value="Software")
     country_code = st.text_input("Country code", value="USA")
     state_code = st.text_input("State code", value="CA")
     region = st.text_input("Region", value="SF Bay Area")
@@ -39,8 +39,8 @@ with st.form("startup_form"):
 
 if submitted:
     errors = []
-    if not main_category.strip():
-        errors.append("Main category is required.")
+    if not category_list.strip():
+        errors.append("Category list is required.")
 
     if not country_code.strip():
         errors.append("Country code is required.")
@@ -65,7 +65,7 @@ if submitted:
             st.error(error)
     else:
         payload = {
-            "main_category": main_category,
+            "category_list": category_list,
             "country_code": country_code,
             "state_code": state_code,
             "region": region,

@@ -78,7 +78,7 @@ Predicts whether a startup is likely to succeed. For most users this will be the
 
 ```json
 {
-    "main_category": string,
+    "category_list": string,
     "country_code": string,
     "state_code": string,
     "region": string,
@@ -95,7 +95,7 @@ Predicts whether a startup is likely to succeed. For most users this will be the
 
 The information for these fields is input from the Streamlit URL. There will be input boxes for each of the features. funding_total_usd and funding_rounds can either be manually input or incremented with the plus and minus symbols on their input boxes. founded_at, first_funded_at and last_funded_at are input using a date selector. The other features are input manually. The datetime features do not support any dates past 2016. Invalid inputs will be caught by the frontend and displayed to the user.
 
-main_category is the main category of business of a startup, such as Software, Games, Fashion, Analytics, Advertising etc.
+category_list is the list of categories, which can either be one category or multiple which should be separated with "|", i.e. Software|Games|Media.
 
 country_code is the 3-letter ISO country code of the country a startup is located in, such as USA for the United States of America, FRA for France, NLD for the Netherlands, CHN for China etc.
 

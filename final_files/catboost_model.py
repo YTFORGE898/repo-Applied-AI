@@ -105,6 +105,7 @@ def tune_catboost(X_cb_train, y_train, cat_features, X_cb_val, y_val):
 
         print("trial", trial.number + 1, "/", N_TRIALS)
 
+        # CatBoost model for validation
         model = CatBoostClassifier(**params)
         model.fit(
             X_cb_train,
@@ -121,6 +122,9 @@ def tune_catboost(X_cb_train, y_train, cat_features, X_cb_val, y_val):
         print("val auc:", round(auc, 4))
         return auc
 
+    # The Optuna study is what actually performs the trials.
+    # direction="maximize" means that Optuna will search for the hyperparameters
+    # that provide the highest ROC-AUC.
     study = optuna.create_study(direction="maximize")
     study.optimize(objective, n_trials=N_TRIALS, timeout=TIMEOUT_SECONDS)
 
@@ -132,7 +136,9 @@ def tune_catboost(X_cb_train, y_train, cat_features, X_cb_val, y_val):
 def train_catboost(study, X_cb_trainval, cat_cols, y_trainval, X_cb_test, y_test):
     # final CatBoost model
 
+    # Use the parameters from Optuna
     best_params = study.best_params.copy()
+    # Save the parameters for use in the experiments
     joblib.dump(best_params, "params/best_params.pkl")
 
     cat_final = CatBoostClassifier(
@@ -173,6 +179,7 @@ def train_catboost(study, X_cb_trainval, cat_cols, y_trainval, X_cb_test, y_test
     imp = imp.sort_values("importance", ascending=False)
     print(imp.head(15))
 
+    # Save the model for use in the experiments
     cat_final.save_model("models/catboost_model.cbm")
 
 def main():

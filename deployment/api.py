@@ -13,7 +13,7 @@ app = FastAPI(
 
 
 class StartupInput(BaseModel):
-    main_category: str = Field(..., min_length=1)
+    category_list: str = Field(..., min_length=1)
     country_code: str = Field(..., min_length=1)
     state_code: str = Field(..., min_length=1)
     region: str = Field(..., min_length=1)

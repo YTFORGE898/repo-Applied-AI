@@ -8,7 +8,7 @@ from preprocessing import load_metadata, preprocess_inference_record
 
 ARTIFACTS_DIR = Path("artifacts")
 MODEL_PATH = ARTIFACTS_DIR / "model.cbm"
-METADATA_PATH = ARTIFACTS_DIR / "preprocessing_config.json"
+METADATA_PATH = ARTIFACTS_DIR / "metadata.json"
 
 
 @lru_cache(maxsize=1)
